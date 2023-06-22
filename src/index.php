@@ -1,25 +1,21 @@
 <form action="#" method="GET">
-    <label for="">Enter Name :</label>
-    <input type="text" name="name" placeholder="Enter Name">
-    <br>
-    <label for="">Enter Company Name :</label>
-    <input type="text" name="cname" placeholder="Enter Company Name">
+    <label for="">Upload Image</label>
+    <input type="file" name="name" placeholder=" Select Image">
     <br>
     <input type="submit" value="submit" name="submit">
 </form>
 <?php
 if (isset($_GET['submit'])) {
-    if (empty($_GET['name'] || $_GET['cname'])) {
+    if (empty($_GET['name'])) {
         customError();
-    }else{
-        echo "Success";
-        die;
+    } else {
+        echo "Image Uploaded Successfully....";
     }
 }
 set_error_handler("customError");
 function customError()
 {
-    echo "Please fill all the fields";
+    echo "Error............ ! Image not found";
     die;
 }
 ?>
